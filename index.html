@@ -385,7 +385,7 @@
               <div class="mini"><span>Enganche</span><strong id="downMoney">$462k</strong></div>
               <div class="mini"><span>Plazo</span><strong id="termMini">48m</strong></div>
             </div>
-            <a class="btn primary" href="#contacto">Solicitar análisis personalizado</a>
+            <a class="btn primary" id="analysisCta" href="#contacto">Solicitar análisis personalizado</a>
             <p class="fine">Este simulador no constituye una oferta vinculante. Sirve para presentación comercial y validación de concepto.</p>
           </div>
         </div>
@@ -463,6 +463,20 @@
       document.getElementById('financed').textContent = compact(financed);
       document.getElementById('downMoney').textContent = compact(a*d);
       document.getElementById('termMini').textContent = t + 'm';
+      const subject = 'Solicitud de análisis Kabin Financial';
+      const body = [
+        'Hola, quiero solicitar un análisis personalizado.',
+        '',
+        'Monto del vehículo: ' + peso.format(a),
+        'Enganche: ' + Math.round(d*100) + '% (' + peso.format(a*d) + ')',
+        'Monto financiado: ' + peso.format(financed),
+        'Plazo: ' + t + ' meses',
+        'Tasa estimada anual: ' + (+rate.value).toFixed(1) + '%',
+        'Pago mensual estimado: ' + peso.format(monthly)
+      ].join('\n');
+      document.getElementById('analysisCta').href =
+        'mailto:contacto@kabinconsultores.com?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
     }
     [amount,down,term,rate].forEach(el=>el.addEventListener('input',calc));
     calc();
