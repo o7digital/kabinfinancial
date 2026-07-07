@@ -153,13 +153,36 @@
     .dark-band{background:var(--navy);color:white;position:relative;overflow:hidden}.dark-band::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 0%,rgba(199,163,91,.16),transparent 30%),radial-gradient(circle at 86% 40%,rgba(255,255,255,.08),transparent 26%);pointer-events:none}.dark-band .container{position:relative}.dark-band .section-head p{color:rgba(255,255,255,.62)}.process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:24px;background:rgba(255,255,255,.045);position:relative;min-height:250px}.step b{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(199,163,91,.16);border:1px solid rgba(199,163,91,.38);color:var(--gold-2);margin-bottom:36px}.step h3{font-size:23px;letter-spacing:-.04em;margin:0 0 12px}.step p{color:rgba(255,255,255,.62);line-height:1.6;margin:0;font-size:14px}.step:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:36px;color:rgba(225,201,135,.55);font-size:28px;z-index:2}
     .calculator-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:stretch}.calc-card,.summary-card{background:white;border-radius:34px;border:1px solid rgba(7,19,31,.08);box-shadow:0 24px 72px rgba(7,19,31,.08);padding:30px}.calc-card h3,.summary-card h3{font-size:30px;line-height:1;letter-spacing:-.05em;margin:0 0 10px}.field{margin:24px 0}.field label{display:flex;justify-content:space-between;font-size:13px;font-weight:800;color:#273547;margin-bottom:13px}.field label span{color:var(--gold)}input[type=range]{width:100%;accent-color:var(--gold)}.summary-card{background:linear-gradient(150deg,#fff,#f8f3e9)}.payment{font-size:56px;letter-spacing:-.07em;line-height:.9;margin:24px 0 4px;color:var(--navy);font-weight:900}.summary-card p{color:#626d78;line-height:1.7}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0}.mini{border:1px solid rgba(7,19,31,.08);border-radius:20px;padding:14px;background:rgba(255,255,255,.62)}.mini span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#7c8691;margin-bottom:8px}.mini strong{font-size:18px}.fine{font-size:12px;color:#7f8790;line-height:1.6;margin-top:18px}
     .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.doc-card{background:white;border-radius:34px;padding:34px;border:1px solid rgba(7,19,31,.08);box-shadow:0 24px 72px rgba(7,19,31,.07)}.checklist{display:grid;gap:12px;margin-top:24px}.check{display:flex;gap:13px;align-items:flex-start;padding:15px;border-radius:18px;background:#f8f5ee}.check i{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#07131f;display:grid;place-items:center;font-style:normal;font-weight:900;flex:none}.image-card{min-height:520px;border-radius:42px;background:linear-gradient(145deg,rgba(7,19,31,.96),rgba(16,37,61,.94));position:relative;overflow:hidden;padding:34px;color:white;box-shadow:var(--shadow)}.image-card::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-80px;background:rgba(199,163,91,.18)}.security-lines{position:absolute;inset:auto 28px 28px;border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:24px;background:rgba(255,255,255,.06);backdrop-filter:blur(16px)}.security-lines h3{font-size:34px;line-height:1;letter-spacing:-.055em;margin:0 0 18px}.risk{display:grid;gap:10px}.risk div{height:12px;border-radius:999px;background:rgba(255,255,255,.11);overflow:hidden}.risk span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}.risk div:nth-child(2) span{width:62%}.risk div:nth-child(3) span{width:44%}
-    .final-cta{padding:98px 22px;background:linear-gradient(135deg,var(--ink),var(--navy));color:white;text-align:center;position:relative;overflow:hidden}.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(199,163,91,.18),transparent 34%)}.final-cta .container{position:relative}.final-cta h2{font-size:clamp(42px,5vw,76px);line-height:.95;letter-spacing:-.075em;margin:0 auto 20px;max-width:840px}.final-cta p{color:rgba(255,255,255,.66);max-width:660px;margin:0 auto 30px;line-height:1.7}.footer{padding:28px 22px;background:#050b12;color:rgba(255,255,255,.56)}.footer .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13px}.footer strong{color:white}
+    .final-cta{padding:98px 22px;background:linear-gradient(135deg,var(--ink),var(--navy));color:white;text-align:center;position:relative;overflow:hidden}.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(199,163,91,.18),transparent 34%)}.final-cta .container{position:relative}.final-cta h2{font-size:clamp(42px,5vw,76px);line-height:.95;letter-spacing:-.075em;margin:0 auto 20px;max-width:840px}.final-cta p{color:rgba(255,255,255,.66);max-width:660px;margin:0 auto 30px;line-height:1.7}
+
+    .footer{background:#050b12;color:white;border-top:1px solid rgba(255,255,255,.1)}
+    .footer-main{display:grid;grid-template-columns:1.4fr .9fr 1fr;gap:42px;padding:64px 22px}
+    .footer-brand-row{display:flex;align-items:center;gap:18px}
+    .footer-logo{width:118px;height:118px;object-fit:contain;flex:none}
+    .footer-kicker,.footer-title{margin:0;color:#f4dfaa;text-transform:uppercase;font-weight:900;letter-spacing:.24em}
+    .footer-kicker{font-size:11px;line-height:1.8}
+    .footer-copy{max-width:390px;margin:22px 0 0;color:rgba(255,255,255,.64);font-size:15px;line-height:1.8}
+    .footer-title{font-size:14px;letter-spacing:.2em;margin-bottom:22px}
+    .footer-links{display:grid;gap:14px;color:rgba(255,255,255,.66);font-weight:700}
+    .footer-links a,.footer-links p{margin:0;color:inherit}
+    .footer-links a:hover{color:white}
+    .footer-social{border-top:1px solid rgba(255,255,255,.11);border-bottom:1px solid rgba(255,255,255,.11);padding:26px 22px}
+    .footer-social-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .social-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .social-icon{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;color:rgba(255,255,255,.72);font-size:14px;font-weight:900}
+    .social-icon:hover{border-color:white;color:white}
+    .back-top{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(199,163,91,.62);color:var(--gold-2);border-radius:999px;padding:13px 22px;font-weight:900;font-size:14px}
+    .back-top:hover{background:var(--gold);color:#050b12}
+    .footer-bottom{padding:24px 22px 34px}
+    .footer-bottom-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;color:rgba(255,255,255,.52);font-size:13px;font-weight:800}
+    .legal-links{display:flex;gap:22px;flex-wrap:wrap}
+    .legal-links a:hover{color:white}
 
     @media (max-width:980px){
-      .nav{display:none}.menu-btn{display:block}.hero-grid,.calculator-wrap,.split{grid-template-columns:1fr}.visual{min-height:610px}.slider-card{left:0;right:auto}.proof-row,.solutions,.process{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}.section-head{display:block}.section-head p{margin-top:16px}.floating-panel{left:16px}
+      .nav{display:none}.menu-btn{display:block}.hero-grid,.calculator-wrap,.split{grid-template-columns:1fr}.visual{min-height:610px}.slider-card{left:0;right:auto}.proof-row,.solutions,.process{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}.section-head{display:block}.section-head p{margin-top:16px}.floating-panel{left:16px}.footer-main{grid-template-columns:1fr 1fr}.footer-main>div:first-child{grid-column:1/-1}
     }
     @media (max-width:640px){
-      .topbar{top:10px;width:calc(100% - 20px);border-radius:24px}.brand{font-size:12px}.hero{padding-top:112px}.hero-actions{display:grid}.btn{width:100%}.proof-row,.solutions,.process,.mini-grid{grid-template-columns:1fr}.visual{min-height:580px}.slider-card{min-height:520px;padding:18px;border-radius:30px}.slide{inset:18px}.vehicle{width:260px;height:96px}.vehicle::before{left:55px;width:140px}.vehicle::after{left:76px}.wheel{width:48px;height:48px}.wheel.one{left:40px}.wheel.two{right:42px}.floating-panel{display:none}.step::after{display:none}.payment{font-size:46px}.footer .container{display:block}.footer span{display:block;margin-top:8px}}
+      .topbar{top:10px;width:calc(100% - 20px);border-radius:24px}.brand{font-size:12px}.hero{padding-top:112px}.hero-actions{display:grid}.btn{width:100%}.proof-row,.solutions,.process,.mini-grid{grid-template-columns:1fr}.visual{min-height:580px}.slider-card{min-height:520px;padding:18px;border-radius:30px}.slide{inset:18px}.vehicle{width:260px;height:96px}.vehicle::before{left:55px;width:140px}.vehicle::after{left:76px}.wheel{width:48px;height:48px}.wheel.one{left:40px}.wheel.two{right:42px}.floating-panel{display:none}.step::after{display:none}.payment{font-size:46px}.footer-main{grid-template-columns:1fr;padding-top:48px}.footer-brand-row{align-items:flex-start}.footer-logo{width:92px;height:92px}.footer-social-inner,.footer-bottom-inner{align-items:flex-start;flex-direction:column}.social-actions{gap:12px}.back-top{width:100%;justify-content:center}}
 
 
     /* HERO PHOTO OVERRIDE — vraie photo fournie par Olivier */
@@ -275,7 +298,7 @@
 
     <main id="top">
       <section class="hero">
-        <img src="./assets/kabin-financial-hero-car.jpg" alt="Vehículo premium para financiamiento automotriz blindado" class="hero-car-image" />
+        <img src="./assets/kabin-financial-hero-car.jpg" alt="Pickup 4x4 GM 2026 para financiamiento automotriz blindado" class="hero-car-image" />
         <div class="hero-shell hero-grid">
           <div>
             <span class="eyebrow">División especializada de Kabin</span>
@@ -299,9 +322,9 @@
                   <div class="shield">K</div>
                   <div class="vehicle"><span class="wheel one"></span><span class="wheel two"></span></div>
                 </div>
-                <h2>Compra de vehículo blindado</h2>
-                <p>Diseñamos una ruta de financiamiento para adquirir unidades ejecutivas nuevas o seminuevas sin comprometer el flujo de caja de la empresa.</p>
-                <div class="slide-meta"><span class="chip">SUV ejecutiva</span><span class="chip">Sedán blindado</span><span class="chip">Flotilla directiva</span></div>
+                <h2>Pickup 4x4 GM 2026</h2>
+                <p>Diseñamos una ruta de financiamiento para adquirir pickups ejecutivas 4x4 nuevas, aptas para proyectos de blindaje y operación corporativa.</p>
+                <div class="slide-meta"><span class="chip">Pickup 4x4</span><span class="chip">GM 2026</span><span class="chip">Blindaje ejecutivo</span></div>
               </article>
               <article class="slide">
                 <div class="vehicle-stage">
@@ -424,7 +447,57 @@
     </main>
 
     <footer class="footer">
-      <div class="container"><strong>Kabin Financial</strong><span>Financiamiento automotriz blindado · Diseño conceptual O7</span></div>
+      <div class="container footer-main">
+        <div>
+          <div class="footer-brand-row">
+            <img src="./assets/kabin-logo-white.png" alt="Kabin Financial" class="footer-logo" loading="lazy" decoding="async" />
+            <p class="footer-kicker">Nuestra Firma Financiera</p>
+          </div>
+          <p class="footer-copy">Financiamiento automotriz especializado para clientes y empresas que necesitan seguridad, estructura y liquidez.</p>
+        </div>
+
+        <div>
+          <p class="footer-title">Navegación</p>
+          <nav class="footer-links" aria-label="Navegación de pie de página">
+            <a href="#top">Inicio</a>
+            <a href="#soluciones">Soluciones</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#simulador">Simulador</a>
+            <a href="#requisitos">Requisitos</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer-title">Contacto</p>
+          <div class="footer-links">
+            <p>Atención en México</p>
+            <a href="mailto:contacto@kabinconsultores.com">contacto@kabinconsultores.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <div class="container footer-social-inner">
+          <p class="footer-title">Redes sociales</p>
+          <div class="social-actions">
+            <a class="social-icon" href="https://www.instagram.com/kabin_consultoria" aria-label="Instagram Kabin Financial">IG</a>
+            <a class="social-icon" href="https://www.facebook.com/" aria-label="Facebook Kabin Financial">f</a>
+            <a class="social-icon" href="https://www.tiktok.com/" aria-label="TikTok Kabin Financial">♪</a>
+            <a class="back-top" href="#top" aria-label="Volver arriba">Volver arriba ↑</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>© 2026 Kabin Financial. Todos los derechos reservados.</p>
+          <div class="legal-links">
+            <a href="#contacto">Aviso de Privacidad</a>
+            <a href="#contacto">Términos</a>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
 
