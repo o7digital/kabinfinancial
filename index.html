@@ -277,6 +277,25 @@
       }
       .hero-car-image { object-position:66% center; }
     }
+    @media (max-width:640px) {
+      .hero {
+        min-height:920px;
+      }
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(7,19,31,.95) 0%, rgba(7,19,31,.82) 40%, rgba(7,19,31,.48) 64%, rgba(7,19,31,.14) 100%),
+          linear-gradient(90deg, rgba(7,19,31,.72) 0%, rgba(7,19,31,.36) 58%, rgba(7,19,31,.08) 100%);
+      }
+      .hero-car-image {
+        object-position:68% 60%;
+        filter:saturate(1.14) contrast(1.18) brightness(1.32);
+        transform:scale(1.08);
+        transform-origin:68% 60%;
+      }
+      .hero::after {
+        color:rgba(255,255,255,.015);
+      }
+    }
     /* END HERO PHOTO OVERRIDE */
 
   </style>
