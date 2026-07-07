@@ -314,47 +314,6 @@
               <div class="proof"><strong>Premium</strong><span>Compra, leasing, seguro y documentación.</span></div>
             </div>
           </div>
-
-          <div class="visual" aria-label="Slider de soluciones Kabin Financial">
-            <div class="slider-card">
-              <article class="slide active">
-                <div class="vehicle-stage">
-                  <div class="shield">K</div>
-                  <div class="vehicle"><span class="wheel one"></span><span class="wheel two"></span></div>
-                </div>
-                <h2>Pickup 4x4 GM 2026</h2>
-                <p>Diseñamos una ruta de financiamiento para adquirir pickups ejecutivas 4x4 nuevas, aptas para proyectos de blindaje y operación corporativa.</p>
-                <div class="slide-meta"><span class="chip">Pickup 4x4</span><span class="chip">GM 2026</span><span class="chip">Blindaje ejecutivo</span></div>
-              </article>
-              <article class="slide">
-                <div class="vehicle-stage">
-                  <div class="shield">$</div>
-                  <div class="vehicle"><span class="wheel one"></span><span class="wheel two"></span></div>
-                </div>
-                <h2>Arrendamiento financiero</h2>
-                <p>Una alternativa para conservar liquidez, planear pagos y alinear la adquisición con objetivos fiscales y patrimoniales.</p>
-                <div class="slide-meta"><span class="chip">Pagos mensuales</span><span class="chip">Estructura fiscal</span><span class="chip">Valor residual</span></div>
-              </article>
-              <article class="slide">
-                <div class="vehicle-stage">
-                  <div class="shield">✓</div>
-                  <div class="vehicle"><span class="wheel one"></span><span class="wheel two"></span></div>
-                </div>
-                <h2>Renovación de flotilla</h2>
-                <p>Apoyamos a empresas que necesitan actualizar unidades, ordenar contratos y centralizar seguros, verificaciones y documentación.</p>
-                <div class="slide-meta"><span class="chip">C-suite</span><span class="chip">Empresas familiares</span><span class="chip">Corporativos</span></div>
-              </article>
-              <div class="slider-controls">
-                <div class="dots" aria-label="Controles del slider"><button class="dot active"></button><button class="dot"></button><button class="dot"></button></div>
-                <div class="arrows"><button class="arrow" id="prev">‹</button><button class="arrow" id="next">›</button></div>
-              </div>
-            </div>
-            <aside class="floating-panel">
-              <small>Preanálisis financiero</small>
-              <div class="approval"><strong>76%</strong><span>perfil viable<br/>estimado</span></div>
-              <div class="bar"><i></i></div>
-            </aside>
-          </div>
         </div>
       </section>
 
@@ -502,19 +461,6 @@
   </div>
 
   <script>
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    const dots = Array.from(document.querySelectorAll('.dot'));
-    let index = 0;
-    function showSlide(next){
-      index = (next + slides.length) % slides.length;
-      slides.forEach((s,i)=>s.classList.toggle('active', i===index));
-      dots.forEach((d,i)=>d.classList.toggle('active', i===index));
-    }
-    document.getElementById('next').addEventListener('click',()=>showSlide(index+1));
-    document.getElementById('prev').addEventListener('click',()=>showSlide(index-1));
-    dots.forEach((dot,i)=>dot.addEventListener('click',()=>showSlide(i)));
-    setInterval(()=>showSlide(index+1), 5200);
-
     const amount = document.getElementById('amount');
     const down = document.getElementById('down');
     const term = document.getElementById('term');
