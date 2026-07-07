@@ -154,6 +154,14 @@
     .calculator-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:stretch}.calc-card,.summary-card{background:white;border-radius:34px;border:1px solid rgba(7,19,31,.08);box-shadow:0 24px 72px rgba(7,19,31,.08);padding:30px}.calc-card h3,.summary-card h3{font-size:30px;line-height:1;letter-spacing:-.05em;margin:0 0 10px}.field{margin:24px 0}.field label{display:flex;justify-content:space-between;font-size:13px;font-weight:800;color:#273547;margin-bottom:13px}.field label span{color:var(--gold)}input[type=range]{width:100%;accent-color:var(--gold)}.summary-card{background:linear-gradient(150deg,#fff,#f8f3e9)}.payment{font-size:56px;letter-spacing:-.07em;line-height:.9;margin:24px 0 4px;color:var(--navy);font-weight:900}.summary-card p{color:#626d78;line-height:1.7}.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:26px 0}.mini{border:1px solid rgba(7,19,31,.08);border-radius:20px;padding:14px;background:rgba(255,255,255,.62)}.mini span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#7c8691;margin-bottom:8px}.mini strong{font-size:18px}.fine{font-size:12px;color:#7f8790;line-height:1.6;margin-top:18px}
     .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.doc-card{background:white;border-radius:34px;padding:34px;border:1px solid rgba(7,19,31,.08);box-shadow:0 24px 72px rgba(7,19,31,.07)}.checklist{display:grid;gap:12px;margin-top:24px}.check{display:flex;gap:13px;align-items:flex-start;padding:15px;border-radius:18px;background:#f8f5ee}.check i{width:24px;height:24px;border-radius:50%;background:var(--gold);color:#07131f;display:grid;place-items:center;font-style:normal;font-weight:900;flex:none}.image-card{min-height:520px;border-radius:42px;background:linear-gradient(145deg,rgba(7,19,31,.96),rgba(16,37,61,.94));position:relative;overflow:hidden;padding:34px;color:white;box-shadow:var(--shadow)}.image-card::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-160px;top:-80px;background:rgba(199,163,91,.18)}.security-lines{position:absolute;inset:auto 28px 28px;border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:24px;background:rgba(255,255,255,.06);backdrop-filter:blur(16px)}.security-lines h3{font-size:34px;line-height:1;letter-spacing:-.055em;margin:0 0 18px}.risk{display:grid;gap:10px}.risk div{height:12px;border-radius:999px;background:rgba(255,255,255,.11);overflow:hidden}.risk span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}.risk div:nth-child(2) span{width:62%}.risk div:nth-child(3) span{width:44%}
     .final-cta{padding:98px 22px;background:linear-gradient(135deg,var(--ink),var(--navy));color:white;text-align:center;position:relative;overflow:hidden}.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(199,163,91,.18),transparent 34%)}.final-cta .container{position:relative}.final-cta h2{font-size:clamp(42px,5vw,76px);line-height:.95;letter-spacing:-.075em;margin:0 auto 20px;max-width:840px}.final-cta p{color:rgba(255,255,255,.66);max-width:660px;margin:0 auto 30px;line-height:1.7}
+    .contact-form{display:grid;gap:14px;width:min(760px,100%);margin:34px auto 0;text-align:left}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .contact-form label{display:grid;gap:8px;color:rgba(255,255,255,.72);font-size:13px;font-weight:800}
+    .contact-form input,.contact-form textarea{width:100%;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(255,255,255,.07);color:white;padding:15px 16px;font:inherit;outline:none}
+    .contact-form input:focus,.contact-form textarea:focus{border-color:rgba(225,201,135,.72);box-shadow:0 0 0 4px rgba(199,163,91,.12)}
+    .contact-form textarea{min-height:128px;resize:vertical}
+    .contact-form .full{grid-column:1/-1}
+    .contact-form .btn{justify-self:center;margin-top:4px}
 
     .footer{background:#050b12;color:white;border-top:1px solid rgba(255,255,255,.1)}
     .footer-main{display:grid;grid-template-columns:1.4fr .9fr 1fr;gap:42px;padding:64px 22px}
@@ -182,7 +190,7 @@
       .nav{display:none}.menu-btn{display:block}.topbar.menu-open{border-radius:26px}.topbar.menu-open .nav{position:absolute;left:0;right:0;top:calc(100% + 10px);display:grid;gap:4px;padding:14px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(7,19,31,.96);box-shadow:0 20px 60px rgba(0,0,0,.32);backdrop-filter:blur(18px)}.topbar.menu-open .nav a{padding:13px 14px;border-radius:16px;color:rgba(255,255,255,.82)}.topbar.menu-open .nav a:hover{background:rgba(255,255,255,.08);color:white}.topbar.menu-open .nav .cta-mini{background:white;color:var(--navy);text-align:center}.hero-grid,.calculator-wrap,.split{grid-template-columns:1fr}.visual{min-height:610px}.slider-card{left:0;right:auto}.proof-row,.solutions,.process{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}.section-head{display:block}.section-head p{margin-top:16px}.floating-panel{left:16px}.footer-main{grid-template-columns:1fr 1fr}.footer-main>div:first-child{grid-column:1/-1}
     }
     @media (max-width:640px){
-      .topbar{top:10px;width:calc(100% - 20px);border-radius:24px}.brand{font-size:12px}.hero{padding-top:112px}.hero-actions{display:grid}.btn{width:100%}.proof-row,.solutions,.process,.mini-grid{grid-template-columns:1fr}.visual{min-height:580px}.slider-card{min-height:520px;padding:18px;border-radius:30px}.slide{inset:18px}.vehicle{width:260px;height:96px}.vehicle::before{left:55px;width:140px}.vehicle::after{left:76px}.wheel{width:48px;height:48px}.wheel.one{left:40px}.wheel.two{right:42px}.floating-panel{display:none}.step::after{display:none}.payment{font-size:46px}.footer-main{grid-template-columns:1fr;padding-top:48px}.footer-brand-row{align-items:flex-start}.footer-logo{width:92px;height:92px}.footer-social-inner,.footer-bottom-inner{align-items:flex-start;flex-direction:column}.social-actions{gap:12px}.back-top{width:100%;justify-content:center}}
+      .topbar{top:10px;width:calc(100% - 20px);border-radius:24px}.brand{font-size:12px}.hero{padding-top:112px}.hero-actions{display:grid}.btn{width:100%}.proof-row,.solutions,.process,.mini-grid,.form-grid{grid-template-columns:1fr}.visual{min-height:580px}.slider-card{min-height:520px;padding:18px;border-radius:30px}.slide{inset:18px}.vehicle{width:260px;height:96px}.vehicle::before{left:55px;width:140px}.vehicle::after{left:76px}.wheel{width:48px;height:48px}.wheel.one{left:40px}.wheel.two{right:42px}.floating-panel{display:none}.step::after{display:none}.payment{font-size:46px}.footer-main{grid-template-columns:1fr;padding-top:48px}.footer-brand-row{align-items:flex-start}.footer-logo{width:92px;height:92px}.footer-social-inner,.footer-bottom-inner{align-items:flex-start;flex-direction:column}.social-actions{gap:12px}.back-top{width:100%;justify-content:center}}
 
 
     /* HERO PHOTO OVERRIDE — vraie photo fournie par Olivier */
@@ -421,7 +429,28 @@
         <div class="container">
           <h2>Una división financiera para clientes que necesitan seguridad sin perder liquidez.</h2>
           <p>Kabin Financial puede operar como landing comercial, micrositio o nueva vertical dentro del ecosistema Kabin Consultores.</p>
-          <a class="btn primary" href="mailto:contacto@kabinfinancial.com.mx?subject=Solicitud%20Kabin%20Financial">Agendar diagnóstico</a>
+          <form class="contact-form" action="https://formspree.io/f/mkoleddd" method="POST">
+            <input type="hidden" name="_subject" value="Nueva solicitud Kabin Financial" />
+            <input type="hidden" name="escenario_simulador" id="formScenario" value="" />
+            <div class="form-grid">
+              <label>Nombre
+                <input type="text" name="nombre" autocomplete="name" required />
+              </label>
+              <label>Email
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>Teléfono
+                <input type="tel" name="telefono" autocomplete="tel" />
+              </label>
+              <label>Empresa
+                <input type="text" name="empresa" autocomplete="organization" />
+              </label>
+              <label class="full">Mensaje
+                <textarea name="mensaje" required>Hola, quiero solicitar un análisis personalizado para financiamiento automotriz.</textarea>
+              </label>
+            </div>
+            <button class="btn primary" type="submit">Enviar solicitud</button>
+          </form>
         </div>
       </section>
     </main>
@@ -534,10 +563,7 @@
       document.getElementById('financed').textContent = compact(financed);
       document.getElementById('downMoney').textContent = compact(a*d);
       document.getElementById('termMini').textContent = t + 'm';
-      const subject = 'Solicitud de análisis Kabin Financial';
-      const body = [
-        'Hola, quiero solicitar un análisis personalizado.',
-        '',
+      const scenario = [
         'Monto del vehículo: ' + peso.format(a),
         'Enganche: ' + Math.round(d*100) + '% (' + peso.format(a*d) + ')',
         'Monto financiado: ' + peso.format(financed),
@@ -545,9 +571,7 @@
         'Tasa estimada anual: ' + (+rate.value).toFixed(1) + '%',
         'Pago mensual estimado: ' + peso.format(monthly)
       ].join('\n');
-      document.getElementById('analysisCta').href =
-        'mailto:contacto@kabinfinancial.com.mx?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
+      document.getElementById('formScenario').value = scenario;
     }
     [amount,down,term,rate].forEach(el=>el.addEventListener('input',calc));
     calc();
