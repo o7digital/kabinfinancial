@@ -62,14 +62,8 @@
       color:var(--white);
       box-shadow:0 18px 60px rgba(0,0,0,.2);
     }
-    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
-    .brand-mark{
-      width:35px;height:35px;border-radius:50%;display:grid;place-items:center;
-      background:linear-gradient(145deg,var(--gold-2),var(--gold));
-      color:var(--navy);font-weight:900;letter-spacing:-.04em;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.45), 0 10px 24px rgba(199,163,91,.35);
-    }
-    .brand small{display:block;color:rgba(255,255,255,.58);font-size:10px;letter-spacing:.18em;margin-top:2px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-logo{display:block;width:300px;max-width:min(36vw,300px);height:auto;object-fit:contain}
     .nav{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.74)}
     .nav a:hover{color:var(--gold-2)}
     .cta-mini{padding:11px 18px;border-radius:999px;background:var(--white);color:var(--navy);font-weight:700}
@@ -166,7 +160,7 @@
     .footer{background:#050b12;color:white;border-top:1px solid rgba(255,255,255,.1)}
     .footer-main{display:grid;grid-template-columns:1.4fr .9fr 1fr;gap:42px;padding:64px 22px}
     .footer-brand-row{display:flex;align-items:center;gap:18px}
-    .footer-logo{width:118px;height:118px;object-fit:contain;flex:none}
+    .footer-logo{width:240px;max-width:100%;height:auto;object-fit:contain;flex:none}
     .footer-kicker,.footer-title{margin:0;color:#f4dfaa;text-transform:uppercase;font-weight:900;letter-spacing:.24em}
     .footer-kicker{font-size:11px;line-height:1.8}
     .footer-copy{max-width:390px;margin:22px 0 0;color:rgba(255,255,255,.64);font-size:15px;line-height:1.8}
@@ -174,6 +168,13 @@
     .footer-links{display:grid;gap:14px;color:rgba(255,255,255,.66);font-weight:700}
     .footer-links a,.footer-links p{margin:0;color:inherit}
     .footer-links a:hover{color:white}
+    .privacy-panel{border-top:1px solid rgba(255,255,255,.11);padding:34px 22px 40px}
+    .privacy-card{width:min(1180px,100%);margin:0 auto;padding:30px;border:1px solid rgba(255,255,255,.1);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
+    .privacy-meta{margin:0 0 16px;color:rgba(255,255,255,.5);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .privacy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+    .privacy-grid p{margin:0;color:rgba(255,255,255,.68);font-size:14px;line-height:1.75}
+    .privacy-grid strong{color:white}
+    .privacy-grid .privacy-full{grid-column:1/-1}
     .footer-social{border-top:1px solid rgba(255,255,255,.11);border-bottom:1px solid rgba(255,255,255,.11);padding:26px 22px}
     .footer-social-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
     .social-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
@@ -187,10 +188,10 @@
     .legal-links a:hover{color:white}
 
     @media (max-width:980px){
-      .nav{display:none}.menu-btn{display:block}.topbar.menu-open{border-radius:26px}.topbar.menu-open .nav{position:absolute;left:0;right:0;top:calc(100% + 10px);display:grid;gap:4px;padding:14px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(7,19,31,.96);box-shadow:0 20px 60px rgba(0,0,0,.32);backdrop-filter:blur(18px)}.topbar.menu-open .nav a{padding:13px 14px;border-radius:16px;color:rgba(255,255,255,.82)}.topbar.menu-open .nav a:hover{background:rgba(255,255,255,.08);color:white}.topbar.menu-open .nav .cta-mini{background:white;color:var(--navy);text-align:center}.hero-grid,.calculator-wrap,.split{grid-template-columns:1fr}.visual{min-height:610px}.slider-card{left:0;right:auto}.proof-row,.solutions,.process{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}.section-head{display:block}.section-head p{margin-top:16px}.floating-panel{left:16px}.footer-main{grid-template-columns:1fr 1fr}.footer-main>div:first-child{grid-column:1/-1}
+      .nav{display:none}.menu-btn{display:block}.topbar.menu-open{border-radius:26px}.topbar.menu-open .nav{position:absolute;left:0;right:0;top:calc(100% + 10px);display:grid;gap:4px;padding:14px;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:rgba(7,19,31,.96);box-shadow:0 20px 60px rgba(0,0,0,.32);backdrop-filter:blur(18px)}.topbar.menu-open .nav a{padding:13px 14px;border-radius:16px;color:rgba(255,255,255,.82)}.topbar.menu-open .nav a:hover{background:rgba(255,255,255,.08);color:white}.topbar.menu-open .nav .cta-mini{background:white;color:var(--navy);text-align:center}.hero-grid,.calculator-wrap,.split{grid-template-columns:1fr}.visual{min-height:610px}.slider-card{left:0;right:auto}.proof-row,.solutions,.process{grid-template-columns:1fr 1fr}.step:nth-child(2)::after{display:none}.section-head{display:block}.section-head p{margin-top:16px}.floating-panel{left:16px}.footer-main{grid-template-columns:1fr 1fr}.footer-main>div:first-child{grid-column:1/-1}.privacy-grid{grid-template-columns:1fr}
     }
     @media (max-width:640px){
-      .topbar{top:10px;width:calc(100% - 20px);border-radius:24px}.brand{font-size:12px}.hero{padding-top:112px}.hero-actions{display:grid}.btn{width:100%}.proof-row,.solutions,.process,.mini-grid,.form-grid{grid-template-columns:1fr}.visual{min-height:580px}.slider-card{min-height:520px;padding:18px;border-radius:30px}.slide{inset:18px}.vehicle{width:260px;height:96px}.vehicle::before{left:55px;width:140px}.vehicle::after{left:76px}.wheel{width:48px;height:48px}.wheel.one{left:40px}.wheel.two{right:42px}.floating-panel{display:none}.step::after{display:none}.payment{font-size:46px}.footer-main{grid-template-columns:1fr;padding-top:48px}.footer-brand-row{align-items:flex-start}.footer-logo{width:92px;height:92px}.footer-social-inner,.footer-bottom-inner{align-items:flex-start;flex-direction:column}.social-actions{gap:12px}.back-top{width:100%;justify-content:center}}
+      .topbar{top:10px;width:calc(100% - 20px);border-radius:24px}.brand-logo{max-width:52vw}.hero{padding-top:112px}.hero-actions{display:grid}.btn{width:100%}.proof-row,.solutions,.process,.mini-grid,.form-grid{grid-template-columns:1fr}.visual{min-height:580px}.slider-card{min-height:520px;padding:18px;border-radius:30px}.slide{inset:18px}.vehicle{width:260px;height:96px}.vehicle::before{left:55px;width:140px}.vehicle::after{left:76px}.wheel{width:48px;height:48px}.wheel.one{left:40px}.wheel.two{right:42px}.floating-panel{display:none}.step::after{display:none}.payment{font-size:46px}.footer-main{grid-template-columns:1fr;padding-top:48px}.footer-brand-row{align-items:flex-start}.footer-logo{width:200px}.footer-social-inner,.footer-bottom-inner{align-items:flex-start;flex-direction:column}.social-actions{gap:12px}.back-top{width:100%;justify-content:center}.privacy-card{padding:22px}}
 
 
     /* HERO PHOTO OVERRIDE — vraie photo fournie par Olivier */
@@ -312,8 +313,7 @@
   <div class="page">
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Kabin Financial">
-        <span class="brand-mark">K</span>
-        <span>Kabin Financial <small>Automotive Capital</small></span>
+        <img src="./public/KABIN%20LOGO%20OFICIAL%20BLANCO-01.png" alt="Kabin Financial Automotive Capital" class="brand-logo" loading="eager" decoding="async" />
       </a>
       <nav class="nav" aria-label="Navegación principal">
         <a href="#soluciones">Soluciones</a>
@@ -429,7 +429,7 @@
         <div class="container">
           <h2>Una división financiera para clientes que necesitan seguridad sin perder liquidez.</h2>
           <p>Kabin Financial puede operar como landing comercial, micrositio o nueva vertical dentro del ecosistema Kabin Consultores.</p>
-          <form class="contact-form" action="https://formspree.io/f/mkoleddd" method="POST">
+          <form class="contact-form" action="https://formspree.io/f/mljrpoaj" method="POST">
             <input type="hidden" name="_subject" value="Nueva solicitud Kabin Financial" />
             <input type="hidden" name="escenario_simulador" id="formScenario" value="" />
             <div class="form-grid">
@@ -459,7 +459,7 @@
       <div class="container footer-main">
         <div>
           <div class="footer-brand-row">
-            <img src="./assets/kabin-logo-white.png" alt="Kabin Financial" class="footer-logo" loading="lazy" decoding="async" />
+            <img src="./public/KABIN%20LOGO%20OFICIAL%20BLANCO-01.png" alt="Kabin Financial Automotive Capital" class="footer-logo" loading="lazy" decoding="async" />
             <p class="footer-kicker">División Financiera</p>
           </div>
           <p class="footer-copy">Financiamiento automotriz especializado para clientes y empresas que necesitan seguridad, estructura y liquidez.</p>
@@ -486,6 +486,24 @@
         </div>
       </div>
 
+      <div class="privacy-panel" id="aviso-privacidad">
+        <div class="privacy-card">
+          <p class="footer-title">Aviso de Privacidad</p>
+          <p class="privacy-meta">Basado en el aviso publicado por Kabin Consultores. Última actualización fuente: 21 de mayo de 2026.</p>
+          <div class="privacy-grid">
+            <p><strong>Responsable.</strong> Kabin Consultores es responsable del tratamiento de los datos personales recabados a través de este sitio y de los canales de contacto relacionados con sus servicios financieros.</p>
+            <p><strong>Datos recabados.</strong> Se pueden solicitar nombre, teléfono, correo electrónico, empresa, datos fiscales para facturación, datos de identificación y la información necesaria para atender solicitudes comerciales o prestar servicios.</p>
+            <p><strong>Finalidades primarias.</strong> La información se utiliza para dar seguimiento a solicitudes, evaluar necesidades, integrar expedientes, prestar servicios, emitir comprobantes fiscales y cumplir obligaciones administrativas, legales y fiscales.</p>
+            <p><strong>Finalidades secundarias.</strong> De forma adicional, la información puede utilizarse para contacto comercial sobre servicios de Kabin. Puede oponerse a ese uso escribiendo a <a href="mailto:contacto@kabinconsultores.com">contacto@kabinconsultores.com</a>.</p>
+            <p><strong>Transferencias.</strong> Los datos no se transfieren a terceros sin consentimiento, salvo en los casos permitidos por la legislación aplicable o cuando resulte necesario para cumplir obligaciones legales ante autoridades competentes.</p>
+            <p><strong>Derechos ARCO.</strong> El titular puede solicitar acceso, rectificación, cancelación u oposición, así como revocar su consentimiento, enviando su solicitud al correo <a href="mailto:contacto@kabinconsultores.com">contacto@kabinconsultores.com</a>.</p>
+            <p><strong>Cookies y tecnologías.</strong> Este sitio puede utilizar cookies u otras tecnologías para mejorar la navegación. El usuario puede deshabilitarlas desde la configuración de su navegador.</p>
+            <p><strong>Cambios al aviso.</strong> Kabin podrá actualizar este aviso en cualquier momento y publicará los cambios en sus canales digitales correspondientes.</p>
+            <p class="privacy-full"><strong>Referencia.</strong> Fuente consultada: <a href="https://www.kabinconsultores.com/aviso-privacidad.html" target="_blank" rel="noopener noreferrer">kabinconsultores.com/aviso-privacidad.html</a>.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="footer-social">
         <div class="container footer-social-inner">
           <p class="footer-title">Redes sociales</p>
@@ -502,7 +520,7 @@
         <div class="container footer-bottom-inner">
           <p>© 2026 Kabin Financial. Todos los derechos reservados.</p>
           <div class="legal-links">
-            <a href="#contacto">Aviso de Privacidad</a>
+            <a href="#aviso-privacidad">Aviso de Privacidad</a>
             <a href="#contacto">Términos</a>
           </div>
         </div>
