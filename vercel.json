@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "functions": {
+    "api/*.mjs": {
+      "runtime": "nodejs22.x",
+      "maxDuration": 10
+    }
+  }
 }
