@@ -106,7 +106,7 @@
     ];
     const peso = new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:0});
     const vehicle = document.querySelector('#vehicle'); const armorOptions = document.querySelector('#armorOptions'); const toast = document.querySelector('#toast');
-    let selectedArmor = 'level-iii'; let scenario = null;
+    let selectedArmor = 'level-iii'; let scenario = null; let calculationRequest = 0;
     const fmt = (value) => peso.format(value || 0);
     function showToast(message, isError=false) { toast.textContent=message; toast.className='toast show'+(isError?' error':''); setTimeout(()=>toast.className='toast', 4200); }
     function vehicleView() { const item=inventory.find(v=>v.id===vehicle.value); document.querySelector('#vehicleCard strong').textContent=`${item.year} ${item.make} ${item.model}`; document.querySelector('#vehicleMeta').textContent=`${item.color} · ${item.kilometers.toLocaleString('es-MX')} km · ${item.location}`; document.querySelector('#vehiclePrice').textContent=fmt(item.price); }
@@ -114,8 +114,48 @@
     function payload() { return { vehicleId:vehicle.value, armorPackageId:selectedArmor, downPaymentPercent:Number(document.querySelector('#downPayment').value), termMonths:Number(document.querySelector('#termMonths').value), annualRate:Number(document.querySelector('#annualRate').value) }; }
     function updateLabels() { document.querySelector('#downPaymentValue').textContent=document.querySelector('#downPayment').value+'%'; document.querySelector('#termMonthsValue').textContent=document.querySelector('#termMonths').value+' meses'; document.querySelector('#annualRateValue').textContent=Number(document.querySelector('#annualRate').value).toFixed(1)+'%'; }
     function renderScenario(data) { scenario=data.calculation; document.querySelector('#quoteHeadline').textContent=`${data.vehicle.year} ${data.vehicle.make} · ${data.armor.label}`; document.querySelector('#monthlyPayment').textContent=fmt(scenario.monthlyPayment); document.querySelector('#unitPrice').textContent=fmt(scenario.unitPrice); document.querySelector('#packagePrice').textContent=fmt(scenario.packagePrice); document.querySelector('#insurance').textContent=fmt(scenario.insurance); document.querySelector('#downPaymentMoney').textContent=fmt(scenario.downPayment); document.querySelector('#openingFee').textContent=fmt(scenario.openingFee); document.querySelector('#financedAmount').textContent=fmt(scenario.financedAmount); document.querySelector('#disclosure').textContent=data.disclosures[1]; }
-    async function calculate() { updateLabels(); document.querySelector('#calculate').textContent='Calculando…'; try { const response=await fetch('/api/simulate',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload())}); const data=await response.json(); if(!response.ok) throw new Error(data.error || 'No se pudo calcular el escenario.'); renderScenario(data); } catch(error) { showToast(error.message,true); } finally { document.querySelector('#calculate').textContent='Actualizar escenario'; } }
-    async function createDossier() { if(!scenario) await calculate(); if(!scenario) return; const button=document.querySelector('#createDossier'); button.textContent='Creando…'; try { const response=await fetch('/api/lead',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({...payload(),scenario})}); const data=await response.json(); if(!response.ok) throw new Error(data.error || 'No se pudo crear el dossier.'); document.querySelector('#dealReference').textContent=data.dealReference+' · '+data.crm.stage; document.querySelector('#dealDetails').textContent=data.crm.nextAction; document.querySelector('#dealStatus').textContent='EVENTO LISTO'; document.querySelector('#oliviaText').textContent=data.olivia.summary; showToast('Dossier demo preparado para Pulse CRM.'); } catch(error) { showToast(error.message,true); } finally { button.textContent='Crear dossier demo'; } }
+    async function calculate() {
+      const requestId = ++calculationRequest;
+      scenario = null;
+      updateLabels();
+      document.querySelector('#monthlyPayment').textContent = '—';
+      document.querySelector('#calculate').textContent = 'Calculando…';
+      try {
+        const response = await fetch('/api/simulate', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify(payload())});
+        const data = await response.json();
+        if (requestId !== calculationRequest) return null;
+        if (!response.ok) throw new Error(data.error || 'No se pudo calcular el escenario.');
+        renderScenario(data);
+        return data;
+      } catch (error) {
+        if (requestId === calculationRequest) showToast(error.message, true);
+        return null;
+      } finally {
+        if (requestId === calculationRequest) document.querySelector('#calculate').textContent = 'Actualizar escenario';
+      }
+    }
+    async function createDossier() {
+      const button = document.querySelector('#createDossier');
+      button.disabled = true;
+      button.textContent = 'Creando…';
+      try {
+        const current = await calculate();
+        if (!current) return;
+        const response = await fetch('/api/lead', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({vehicleId:current.vehicle.id, armorPackageId:current.armor.id, ...current.inputs})});
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'No se pudo crear el dossier.');
+        document.querySelector('#dealReference').textContent = data.dealReference+' · '+data.crm.stage;
+        document.querySelector('#dealDetails').textContent = data.crm.nextAction;
+        document.querySelector('#dealStatus').textContent = 'EVENTO LISTO';
+        document.querySelector('#oliviaText').textContent = data.olivia.summary;
+        showToast('Dossier demo preparado para Pulse CRM.');
+      } catch (error) {
+        showToast(error.message, true);
+      } finally {
+        button.disabled = false;
+        button.textContent = 'Crear dossier demo';
+      }
+    }
     inventory.forEach(item=>vehicle.insertAdjacentHTML('beforeend',`<option value="${item.id}">${item.year} ${item.make} ${item.model} — ${fmt(item.price)}</option>`)); vehicle.addEventListener('change',()=>{vehicleView();calculate();}); document.querySelectorAll('input[type=range]').forEach(input=>input.addEventListener('input',()=>{updateLabels();})); document.querySelector('#calculate').addEventListener('click',calculate); document.querySelector('#createDossier').addEventListener('click',createDossier); vehicleView(); renderArmor(); calculate();
   </script>
 </body>

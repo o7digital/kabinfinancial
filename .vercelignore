@@ -1,0 +1,24 @@
+# Deploy only the reviewed mockup, its assets, and server functions.
+/*
+!/index.html
+!/demo.html
+!/aviso-privacidad.html
+!/vercel.json
+!/assets
+!/assets/kabin-financial-hero-car.jpg
+!/assets/kabin-logo-white.png
+!/public
+!/public/KABIN LOGO OFICIAL BLANCO-01.png
+!/api
+!/api/simulate.mjs
+!/api/lead.mjs
+!/api/_demo-data.mjs
+/assets/*
+!/assets/kabin-financial-hero-car.jpg
+!/assets/kabin-logo-white.png
+/public/*
+!/public/KABIN LOGO OFICIAL BLANCO-01.png
+/api/*
+!/api/simulate.mjs
+!/api/lead.mjs
+!/api/_demo-data.mjs

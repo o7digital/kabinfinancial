@@ -18,6 +18,9 @@ export default {
     } catch {
       return error("The request body must be valid JSON.");
     }
+    if (!input || typeof input !== "object" || Array.isArray(input)) {
+      return error("The request body must be a JSON object.");
+    }
 
     const vehicle = inventory.find((item) => item.id === input.vehicleId);
     const armor = armorPackages.find((item) => item.id === input.armorPackageId);
@@ -33,7 +36,7 @@ export default {
       return error("The term is outside the demo policy.");
     }
 
-    const annualRate = Number(input.annualRate || financingDefaults.annualRate);
+    const annualRate = Number(input.annualRate ?? financingDefaults.annualRate);
     if (!Number.isFinite(annualRate) || annualRate < 8 || annualRate > 35) {
       return error("The annual rate must be between 8% and 35%.");
     }
