@@ -5,6 +5,10 @@
 !/aviso-privacidad.html
 !/robots.txt
 !/sitemap.xml
+!/en
+!/en/index.html
+!/en/privacy.html
+!/en/demo.html
 !/vercel.json
 !/assets
 !/assets/kabin-financial-hero-car.jpg
