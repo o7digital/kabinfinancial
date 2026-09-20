@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.kabinfinancial.com.mx/sitemap.xml
