@@ -114,6 +114,10 @@
     .brand-logo{display:block;width:auto;height:54px;object-fit:contain}
     .nav{display:flex;align-items:center;gap:24px;font-size:13px;color:rgba(255,255,255,.74)}
     .nav a:hover{color:var(--gold-2)}
+    .lang-switch{display:inline-flex;align-items:center;gap:7px;padding:5px 9px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.06);font-size:11px;font-weight:900;letter-spacing:.08em}
+    .lang-switch a{color:rgba(255,255,255,.58)}
+    .lang-switch a.active,.lang-switch a:hover{color:var(--gold-2)}
+    .lang-switch span{color:rgba(255,255,255,.28)}
     .cta-mini{padding:11px 18px;border-radius:999px;background:var(--white);color:var(--navy);font-weight:700}
     .menu-btn{display:none;border:0;background:transparent;color:white;font-size:22px;cursor:pointer}
 
@@ -369,7 +373,7 @@
         <a href="#simulador">Simulador</a>
         <a href="#requisitos">Requisitos</a>
         <a href="#contacto">Contacto</a>
-        <a href="./en/">English</a>
+        <span class="lang-switch" aria-label="Selector de idioma"><a class="active" href="./" aria-current="page">ES</a><span>/</span><a href="./en/">ENG</a></span>
         <a class="cta-mini" href="#contacto">Solicitar análisis</a>
       </nav>
       <button class="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
