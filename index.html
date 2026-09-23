@@ -307,6 +307,10 @@
     }
     /* END HERO PHOTO OVERRIDE */
 
+    .catalogue-list{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 28px}
+    .catalogue-card{flex:0 0 min(340px,85vw);scroll-snap-align:start;background:white;border-radius:26px;overflow:hidden;box-shadow:0 15px 40px rgba(7,19,31,.09)}
+    .catalogue-card img{width:100%;height:210px;object-fit:cover;display:block}
+    .catalogue-content{padding:22px}.catalogue-content h3{margin:0 0 8px;font-size:23px}.catalogue-content p{color:#637080;line-height:1.5}.catalogue-content a{color:#806024;font-weight:800}
   </style>
 </head>
 <body>
@@ -343,6 +347,13 @@
               <div class="proof"><strong>Premium</strong><span>Compra, leasing, seguro y documentación.</span></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="catalogo" hidden>
+        <div class="container">
+          <div class="section-head"><div><span class="tag">Selección Kabin</span><h2>Vehículos premium para cada proyecto.</h2></div><p>Conoce las opciones publicadas y solicita una estructura financiera a tu medida.</p></div>
+          <div class="catalogue-list" id="catalogueList" aria-live="polite"></div>
         </div>
       </section>
 
@@ -510,7 +521,36 @@
     </footer>
   </div>
 
+  <script src="./config.js"></script>
   <script>
+    async function loadCatalogue() {
+      const api = window.KABIN_API_URL;
+      if (!api || !/^https:\/\//.test(api)) return;
+      try {
+        const response = await fetch(api.replace(/\/$/, '') + '/api/kabin/catalogue');
+        if (!response.ok) throw new Error('Catalogue unavailable');
+        const vehicles = await response.json();
+        if (!Array.isArray(vehicles) || !vehicles.length) return;
+        const list = document.getElementById('catalogueList');
+        const price = new Intl.NumberFormat('es-MX', { style:'currency', currency:'MXN', maximumFractionDigits:0 });
+        for (const car of vehicles) {
+          const card = document.createElement('article'); card.className = 'catalogue-card';
+          if (car.imageUrl && /^https:\/\//.test(car.imageUrl)) {
+            const img = document.createElement('img'); img.src = car.imageUrl;
+            img.alt = [car.brand, car.model].filter(Boolean).join(' '); img.loading = 'lazy'; card.append(img);
+          }
+          const content = document.createElement('div'); content.className = 'catalogue-content';
+          const title = document.createElement('h3'); title.textContent = [car.brand, car.model, car.version].filter(Boolean).join(' ');
+          const detail = document.createElement('p'); detail.textContent = [car.modelYear, car.armorLevel && 'Blindaje ' + car.armorLevel].filter(Boolean).join(' · ');
+          const description = document.createElement('p'); description.textContent = car.description || '';
+          const link = document.createElement('a'); link.href = '#simulador'; link.textContent = 'Simular financiamiento →';
+          link.addEventListener('click', () => { if (car.priceMxn) { const amount = document.getElementById('amount'); amount.value = Math.min(+amount.max, Math.max(+amount.min, Math.round(+car.priceMxn / +amount.step) * +amount.step)); amount.dispatchEvent(new Event('input')); } });
+          content.append(title, detail, description, link); card.append(content); list.append(card);
+        }
+        document.getElementById('catalogo').hidden = false;
+      } catch (error) { console.warn('Kabin catalogue:', error); }
+    }
+    loadCatalogue();
     const topbar = document.querySelector('.topbar');
     const menuBtn = document.querySelector('.menu-btn');
     const navLinks = Array.from(document.querySelectorAll('.nav a'));
